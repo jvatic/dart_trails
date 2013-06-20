@@ -11,11 +11,15 @@ Usage
 However if you would like to play around with it, just add it to your
 `Gemfile`, with either ...
 
-    gem 'dart_trails'
+    group :assets do
+      gem 'dart_trails'
+    end
 
 ... or using a local tree ...
 
-    gem 'dart_trails', path: '/path/to/dart_trails'
+    group :assets do
+      gem 'dart_trails', path: '/path/to/dart_trails'
+    end
 
 Have fun, but try not to use it where it isn't appropriate :)!
 
