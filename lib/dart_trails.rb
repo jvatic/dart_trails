@@ -6,6 +6,11 @@ require 'dart_trails/engine'
 
 module DartTrails
 
-  # ...
+  # Configuration Options
+  # -----------------------
+
+  class << self
+    attr_accessor :cli_options
+  end
 
 end

@@ -1,10 +1,12 @@
 DartTrails
-==========
+============
 
 DartTrails is an engine for Rails Sprockets making use of the `dart2js`
-command-line compiler. The compiler is currently very slow and on top of that,
-my engine does not minify the JavaScript output. As such, I do not recommend
-the use of this engine in a production Rails application.
+command-line compiler. The compiler is currently very slow and as such, I do
+not recommend the use of this engine in a production Rails application.
+
+Usage
+-------
 
 However if you would like to play around with it, just add it to your
 `Gemfile`, with either ...
@@ -18,8 +20,18 @@ However if you would like to play around with it, just add it to your
 Have fun, but try not to use it where it isn't appropriate :)!
 
 
-Troubleshooting
+Configuration
 ---------------
+
+You may select the default command-line options by setting the attribute
+`DartTrails.cli_options`. For example, to enable the command-line option
+`--minify`, use ...
+
+    DartTrails.cli_options = { minify: true }
+
+
+Troubleshooting
+-----------------
 
 If `.dart` assets don't seem to be compiling, you may need to clear the assets
 cache from `tmp/cache/assets`.

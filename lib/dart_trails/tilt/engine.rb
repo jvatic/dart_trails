@@ -9,6 +9,10 @@ module DartTrails
         @file    = fetch_file(file, data)
       end
 
+      def config
+        DartTrails
+      end
+
       # This should return a string, the creation of a file is an unfortunate
       # side effect (the dart2js compiler does not allow you to direct the
       # compiled output to stdout). So I will need to read in the file, and
@@ -29,7 +33,7 @@ module DartTrails
       private
 
       def defaults
-        { minify: true }
+        config.cli_options || { minify: true }
       end
 
       def command
