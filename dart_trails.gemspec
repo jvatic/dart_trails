@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email = 'kelseyjudson@gmail.com'
   s.homepage = 'http://kelseyjudson.com'
 
-  s.files = Dir.glob('lib') + Dir.glob('config') + %w{README.md LICENSE}
+  s.files = Dir.glob('lib') + %w{README.md LICENSE}
   
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = false
