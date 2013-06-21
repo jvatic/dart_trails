@@ -11,7 +11,7 @@ module DartTrails
       if defined?(Logger)
         logger.send(level, message)
       else
-        puts message
+        STDERR.puts message
       end
     end
 

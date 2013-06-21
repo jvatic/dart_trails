@@ -1,9 +1,8 @@
 DartTrails
 ============
 
-DartTrails is an engine for Rails Sprockets making use of the `dart2js`
-command-line compiler which is currently very slow (so be sure to precompile
-assets).
+DartTrails is an engine for Sprockets making use of the `dart2js` command-line
+compiler which is currently very slow (so be sure to precompile assets).
 
 Usage
 -------
