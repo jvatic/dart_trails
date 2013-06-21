@@ -2,7 +2,7 @@
 
 require 'tilt'
 require 'dart_trails/tilt'
-require 'dart_trails/engine'
+require 'dart_trails/railtie'
 
 module DartTrails
 

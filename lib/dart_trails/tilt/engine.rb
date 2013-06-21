@@ -61,16 +61,9 @@ module DartTrails
         "--#{option}"
       end
 
-      # I'm a little undecided about how to handle this. How would it work
-      # with Rails? Would I write to the tmp folder, read the resulting file
-      # and then unlink it?
-      #
-      # And in all other cases (not Rails), perhaps I should just write and
-      # read from a /tmp file also. So how do I separate the two cases?
-      # Inheritance? A separate "Engine" for each case?
-      #
       def output_file
-        '/tmp/dart_tilt_test.dart' # TEMPORARY
+        base = defined?(Rails) ? Rails.root.to_s : ''
+        base + '/tmp/dart_trails.dart'
       end
 
       def input_file
@@ -85,8 +78,12 @@ module DartTrails
         file ? File.new(file) : string_to_file(data)
       end
 
+      # The dart2js compiler does not accept input data on stdin and expects
+      # an input file, so unfortunately if we receive a string, we need to
+      # write it to a file first.
+      #
       def string_to_file(s)
-        f = Tempfile.new('dart_tilt')
+        f = Tempfile.new('dart_trails_input.dart')
         f.write(s)
         f.close
         f
@@ -96,7 +93,17 @@ module DartTrails
         files = %W{ #{output_file} #{output_file}.deps #{output_file}.map}
         s = File.read(output_file)
         File.unlink(*files)
-        s
+
+        strip_source_mapping(s)
+      end
+
+      # Strip the JavaScript Source Map declaration to prevent the browser
+      # making a request for it as currently it is unlinked along with the
+      # other dart2js output files and I believe support for source map files
+      # with Sprockets is still under development.
+      #
+      def strip_source_mapping(s)
+        s.gsub(/\/\/[@#] sourceMappingURL=.+\.map$/, '')
       end
 
     end
