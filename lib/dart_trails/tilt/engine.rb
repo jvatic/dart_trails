@@ -2,6 +2,8 @@ module DartTrails
   module Tilt
     class Engine
 
+      include Logging
+
       attr_reader :file, :options
 
       def initialize(file, data, options = {})
@@ -27,7 +29,13 @@ module DartTrails
                            output_file_option, input_file,
                            redirect )
 
-        success  ? read_and_unlink : ''
+        if success
+          log(:info, "Successfully compiled #{file.path}.")
+          read_and_unlink
+        else
+          log(:error, "Failed to compile #{file.path}.")
+          ''
+        end
       end
 
       private
