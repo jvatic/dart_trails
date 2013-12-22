@@ -2,22 +2,20 @@ DartTrails
 ============
 
 DartTrails is an engine for Sprockets making use of the `dart2js` command-line
-compiler which is currently very slow (so be sure to precompile assets).
+compiler which is currently very slow (not an issue when assets are precompiled).
 
 Usage
 -------
 
 Add to your `Gemfile` either ...
 
-    group :assets do
-      gem 'dart_trails'
-    end
+    gem 'dart_trails'
 
 ... or using a local development tree ...
 
-    group :assets do
-      gem 'dart_trails', path: '/path/to/dart_trails'
-    end
+    gem 'dart_trails', :path => '/path/to/dart_trails'
+
+After running `bundle`, any Dart assets with the extension `.js.dart` should be compiled to JavaScript automatically.
 
 
 Configuration
