@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.author = 'Kelsey Judson'
   s.email = 'kelseyjudson@gmail.com'
-  s.homepage = 'http://kelseyjudson.com'
+  s.homepage = 'http://github.com/kelseyjudson/dart_trails'
 
   s.files = Dir.glob('lib') + %w{README.md LICENSE}
   
