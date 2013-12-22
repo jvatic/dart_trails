@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.email = 'kelseyjudson@gmail.com'
   s.homepage = 'http://github.com/kelseyjudson/dart_trails'
 
-  s.files = Dir.glob('lib') + %w{README.md LICENSE}
+  s.files = Dir.glob('lib/**/*') + %w{README.md LICENSE}
   
   s.platform = Gem::Platform::RUBY
   s.has_rdoc = false
