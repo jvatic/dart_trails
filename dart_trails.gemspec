@@ -1,3 +1,7 @@
+$LOAD_PATH << "#{File.dirname(__FILE__)}/lib"
+
+require 'dart_trails/version'
+
 Gem::Specification.new do |s|
 
   s.name = 'dart_trails'
@@ -5,7 +9,7 @@ Gem::Specification.new do |s|
   s.description = 'A Sprockets/Tilt engine using the dart2js compiler (slow).'
   s.license = 'MIT'
 
-  s.version = 0.1
+  s.version = DartTrails::VERSION
 
   s.author = 'Kelsey Judson'
   s.email = 'kelseyjudson@gmail.com'
