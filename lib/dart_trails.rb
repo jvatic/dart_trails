@@ -4,6 +4,7 @@ require 'dart_trails/logging'
 
 require 'tilt'
 require 'dart_trails/tilt'
+require 'dart_trails/sprockets'
 require 'dart_trails/railtie'
 require 'dart_trails/version'
 
